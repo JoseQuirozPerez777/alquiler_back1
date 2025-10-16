@@ -1,0 +1,10 @@
+[build]
+builder = "NIXPACKS"
+buildCommand = "pnpm install --no-frozen-lockfile && pnpm add -D ts-node tsconfig-paths typescript"
+
+[start]
+cmd = "node -r ts-node/register/transpile-only -r tsconfig-paths/register src/index.ts"
+
+[env]
+NIXPACKS_NODE_VERSION = "20"
+PORT = "5000"
